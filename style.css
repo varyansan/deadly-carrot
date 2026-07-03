@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "Another Danger";
+    src: url("fonts/Another Danger - Demo.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Bebas";
+    src: url("fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+@keyframes glow {
+
+    0%,82%,100%{
+        text-shadow:
+                0 0 8px #ff4d00,
+                0 0 22px rgba(255,77,0,.55),
+                0 0 45px rgba(255,77,0,.35);
+    }
+
+    85%{
+        text-shadow:
+                0 0 18px #ff6b1a,
+                0 0 40px rgba(255,77,0,.9),
+                0 0 90px rgba(255,77,0,.65);
+    }
+
+    87%{
+        text-shadow:
+                0 0 2px rgba(255,77,0,.15);
+    }
+
+    89%{
+        text-shadow:
+                0 0 20px #ff6b1a,
+                0 0 45px rgba(255,77,0,.9),
+                0 0 95px rgba(255,77,0,.7);
+    }
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#070707;
+
+    color:white;
+
+    font-family:Inter,sans-serif;
+
+    overflow:hidden;
+
+}
+
+#hero{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#logo{
+
+    font-family:"Another Danger";
+
+    font-size:140px;
+
+    font-weight:normal;
+
+    color:#ff4d00;
+
+    text-align:center;
+
+    line-height:0.85;
+
+    text-shadow:
+            0 0 6px rgba(255,77,0,.9),
+            0 0 18px rgba(255,77,0,.6),
+            0 0 35px rgba(177,47,0,.35);
+
+    animation: glow 7s infinite;
+
+}
+
+#logo-wrapper{
+    position:relative;
+    display:inline-block;
+}
+
+#subtitle{
+
+    font-family:"Bebas";
+
+    font-size:28px;
+
+    letter-spacing:8px;
+
+    color:#cfcfcf;
+
+    margin-top:35px;
+
+}
+
+#enter{
+
+    margin-top:70px;
+
+    padding:16px 70px;
+
+    background:none;
+
+    border:2px solid #ff4d00;
+
+    color:#ff4d00;
+
+    font-family:"Bebas";
+
+    font-size:26px;
+
+    letter-spacing:4px;
+
+    cursor:pointer;
+
+    transition:
+            background .2s,
+            color .2s,
+            transform .2s,
+            box-shadow .2s;
+
+    animation:buttonIdle 5s infinite;
+
+}
+
+#enter:hover{
+
+    animation:none;
+
+    background:#ff4d00;
+
+    color:#111;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+            0 0 12px rgba(255,77,0,.9),
+            0 0 35px rgba(255,77,0,.65),
+            0 0 60px rgba(255,77,0,.35);
+
+}
+
+#enter:active{
+
+    transform:translateY(0);
+
+    box-shadow:
+            0 0 10px rgba(255,77,0,.6);
+
+}
+
+.glitch{
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    font-family:"Another Danger";
+    font-size:140px;
+    line-height:.85;
+
+    text-shadow:inherit;
+
+}
+
+.red{
+
+    color:#ff2f55;
+
+}
+
+.blue{
+
+    color:#00e5ff;
+
+}
+
+.glitching .red{
+
+    opacity:.55;
+
+    animation:redGlitch .18s steps(2);
+
+}
+
+.glitching .blue{
+
+    opacity:.55;
+
+    animation:blueGlitch .18s steps(2);
+
+}
+
+@keyframes redGlitch{
+
+    0%{
+
+        transform:
+                translate(-5px,-1px);
+
+        clip-path:inset(0 0 75% 0);
+
+    }
+
+    35%{
+
+        transform:
+                translate(6px,1px);
+
+        clip-path:inset(25% 0 35% 0);
+
+    }
+
+    70%{
+
+        transform:
+                translate(-3px,0);
+
+        clip-path:inset(70% 0 0 0);
+
+    }
+
+    100%{
+
+        transform:none;
+
+        clip-path:inset(0);
+
+    }
+
+}
+
+@keyframes blueGlitch{
+
+    0%{
+
+        transform:
+                translate(5px,1px);
+
+        clip-path:inset(70% 0 0 0);
+
+    }
+
+    35%{
+
+        transform:
+                translate(-6px,-1px);
+
+        clip-path:inset(40% 0 30% 0);
+
+    }
+
+    70%{
+
+        transform:
+                translate(3px,0);
+
+        clip-path:inset(0 0 75% 0);
+
+    }
+
+    100%{
+
+        transform:none;
+
+        clip-path:inset(0);
+
+    }
+
+}
+
+@keyframes buttonIdle{
+
+    0%,88%,100%{
+
+        box-shadow:none;
+
+    }
+
+    92%{
+
+        box-shadow:
+                0 0 10px rgba(255,77,0,.45),
+                0 0 20px rgba(255,77,0,.25);
+
+    }
+
+    95%{
+
+        box-shadow:none;
+
+    }
+
+    97%{
+
+        box-shadow:
+                0 0 8px rgba(255,77,0,.35);
+
+    }
+
+}
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+#loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050505;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.5s;
+
+    z-index:9999;
+
+}
+
+#loading-screen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#loading-text{
+
+    font-family:"Bebas";
+
+    font-size:42px;
+
+    letter-spacing:8px;
+
+    color:#ff4d00;
+
+    text-shadow:
+            0 0 10px rgba(255,77,0,.8),
+            0 0 30px rgba(255,77,0,.4);
+
+}
