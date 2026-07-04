@@ -115,8 +115,19 @@ window.addEventListener("scroll", () => {
     content.style.filter =
         `blur(${progress * 12}px)`;
 
-    content.style.transform =
-        `translateY(calc(-50% - ${progress * 120}px))`;
+    const isMobile = window.innerWidth <= 700;
+
+    if(isMobile){
+
+        content.style.transform =
+            `translateX(-50%) translateY(-${progress * 120}px)`;
+
+    }else{
+
+        content.style.transform =
+            `translateY(calc(-50% - ${progress * 120}px))`;
+
+    }
 
 });
 
