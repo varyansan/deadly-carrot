@@ -98,6 +98,7 @@ body{
 #logo-wrapper{
     position:relative;
     display:inline-block;
+    overflow:hidden;
 }
 
 #subtitle{
@@ -173,6 +174,7 @@ body{
 .glitch{
 
     position:absolute;
+    white-space:nowrap;
     inset:0;
 
     pointer-events:none;
@@ -375,5 +377,21 @@ body{
     text-shadow:
             0 0 10px rgba(255,77,0,.8),
             0 0 30px rgba(255,77,0,.4);
+
+}
+
+@media (max-width:700px){
+
+    #logo{
+
+        font-size:68px;
+
+    }
+
+    .glitch{
+
+        font-size:68px;
+
+    }
 
 }
