@@ -1,0 +1,657 @@
+@font-face{
+
+    font-family:"Another Danger";
+
+    src:url("../fonts/Another Danger - Demo.otf");
+
+}
+
+@font-face{
+
+    font-family:"Bebas";
+
+    src:url("../fonts/BebasNeue-Regular.ttf");
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    background:#070707;
+
+    overflow-x:hidden;
+    overflow-y:hidden;
+
+    color:white;
+
+}
+
+@keyframes logoGlow{
+
+    0%,
+    35%,
+    100%{
+
+        text-shadow:
+                0 0 2px rgba(255,120,20,.25),
+                0 0 8px rgba(255,90,0,.10);
+
+        filter:brightness(1);
+
+    }
+
+    40%{
+
+        text-shadow:
+                0 0 3px rgba(255,120,20,.35),
+                0 0 12px rgba(255,90,0,.18);
+
+        filter:brightness(1.03);
+
+    }
+
+    42%{
+
+        text-shadow:
+                0 0 5px rgba(255,140,40,.45),
+                0 0 18px rgba(255,90,0,.25);
+
+        filter:brightness(1.06);
+
+    }
+
+    44%{
+
+        text-shadow:
+                0 0 3px rgba(255,120,20,.35),
+                0 0 12px rgba(255,90,0,.18);
+
+        filter:brightness(1.03);
+
+    }
+
+}
+
+#home-title{
+
+    font-family:"Another Danger";
+
+    font-size:clamp(90px,8vw,150px);
+
+    line-height:.8;
+
+    white-space:nowrap;
+
+    color:#ff6900;
+
+    text-shadow:
+            0 0 2px rgba(255,120,20,.25),
+            0 0 8px rgba(255,90,0,.10);
+
+    animation:logoGlow 6s ease-in-out infinite;
+
+}
+
+#home-title span{
+
+    display:block;
+
+}
+
+#home-title span:last-child{
+
+    margin-top:12px;
+
+}
+
+
+
+/* ===========================
+        BACKGROUND
+=========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("../img/bg.png") center center/cover no-repeat;
+
+    z-index:-10;
+
+}
+
+#background::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.58);
+
+}
+
+/* ===========================
+          HERO
+=========================== */
+
+#hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+          TEXT
+=========================== */
+
+#content{
+    position:absolute;
+    left:8%;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:20;
+    max-width:520px;
+}
+
+#hello{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-family:"Bebas";
+
+    letter-spacing:8px;
+
+    color:#ff6b1a;
+
+    font-size:24px;
+
+    transform:translateY(-15px);
+
+}
+
+#home-title{
+
+    font-family:"Another Danger";
+
+    font-size:clamp(90px,8vw,150px);
+
+    line-height:.8;
+
+    white-space:nowrap;
+
+    color:#ff5b00;
+
+    text-shadow:
+            0 0 4px rgba(255,90,0,.45),
+            0 0 10px rgba(255,90,0,.15);
+}
+
+p{
+
+    margin-top:30px;
+
+    font-family:"Bebas";
+
+    font-size:30px;
+
+    letter-spacing:2px;
+
+    color:#d9d9d9;
+
+    transform:translateY(15px);
+
+}
+
+#scroll{
+
+    margin-top:90px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    font-family:"Bebas";
+
+    letter-spacing:4px;
+
+    color:#ff6b1a;
+
+}
+
+/* ===========================
+          GIRL
+=========================== */
+@keyframes girlGlow{
+
+    0%,
+    100%{
+
+        filter:
+                drop-shadow(0 0 10px rgba(255,110,20,.18))
+                drop-shadow(0 0 25px rgba(255,90,0,.14))
+                drop-shadow(0 0 45px rgba(255,70,0,.08));
+
+    }
+
+    50%{
+
+        filter:
+                drop-shadow(0 0 16px rgba(255,120,20,.28))
+                drop-shadow(0 0 38px rgba(255,90,0,.20))
+                drop-shadow(0 0 70px rgba(255,70,0,.12));
+
+    }
+
+}
+
+#girl{
+
+    position:absolute;
+    right:-150px;
+    bottom:0;
+
+    height:95vh;
+    width:auto;
+
+    z-index:5;
+
+    filter:
+            drop-shadow(0 0 10px rgba(255,110,20,.18))
+            drop-shadow(0 0 25px rgba(255,90,0,.14))
+            drop-shadow(0 0 45px rgba(255,70,0,.08));
+
+    animation:girlGlow 8s ease-in-out infinite;
+
+}
+/* ===========================
+        DECOR
+=========================== */
+
+#rabbit{
+
+    position:absolute;
+
+    left:70px;
+
+    top:70px;
+
+    width:170px;
+
+    opacity:.0;
+
+    z-index:1;
+
+}
+
+#cross{
+
+    position:absolute;
+
+    left:43%;
+
+    bottom:120px;
+
+    width:110px;
+
+    opacity:.0;
+
+    z-index:1;
+
+}
+
+#heart{
+
+    position:absolute;
+
+    right:130px;
+
+    top:90px;
+
+    width:110px;
+
+    opacity:.0;
+
+    z-index:1;
+
+}
+
+/* ===========================
+        AMBIENT SYMBOLS
+=========================== */
+
+#ambient{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+.ambient-symbol{
+
+    position:absolute;
+
+    opacity:0;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    animation:ambientLife linear forwards;
+
+}
+
+@keyframes ambientLife{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    15%{
+
+        opacity:.5;
+
+    }
+
+    85%{
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:scale(1.05);
+
+    }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media screen and (max-width:1024px){
+
+    #content{
+
+        left:6%;
+        max-width:420px;
+
+    }
+
+    #hello{
+
+        font-size:20px;
+        letter-spacing:6px;
+
+    }
+
+    #home-title{
+
+        font-size:95px;
+
+    }
+
+    p{
+
+        font-size:22px;
+        margin-top:25px;
+
+    }
+
+    #scroll{
+
+        margin-top:60px;
+
+    }
+
+    #girl{
+
+        height:88vh;
+        right:-90px;
+
+    }
+
+    #rabbit{
+
+        width:140px;
+        left:30px;
+        top:40px;
+
+    }
+
+    #heart{
+
+        width:90px;
+        right:50px;
+        top:60px;
+
+    }
+
+    #cross{
+
+        width:90px;
+        bottom:80px;
+
+    }
+
+}
+
+
+/* ==========================================
+   TABLET PORTRAIT
+========================================== */
+
+@media screen and (max-width:1024px) and (orientation:portrait){
+
+    #content{
+
+        left:5%;
+        top:50%;
+        max-width:330px;
+
+    }
+
+    #hello{
+
+        font-size:18px;
+
+    }
+
+    #home-title{
+
+        font-size:82px;
+
+    }
+
+    p{
+
+        font-size:18px;
+        margin-top:20px;
+
+    }
+
+    #scroll{
+
+        margin-top:45px;
+
+    }
+
+    #girl{
+
+        height:90vh;
+        right:-170px;
+
+    }
+
+}
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media screen and (max-width:700px){
+
+    #content{
+
+        left:50%;
+        top:13%;
+
+        transform:translateX(-50%);
+
+        width:90%;
+        max-width:340px;
+
+        text-align:center;
+
+    }
+
+    #hello{
+
+        font-size:18px;
+        letter-spacing:5px;
+
+    }
+
+    #home-title{
+
+        font-size:72px;
+        line-height:.82;
+
+        white-space:normal;
+
+    }
+
+    p{
+
+        margin-top:20px;
+
+        font-size:18px;
+
+        line-height:1.3;
+
+    }
+
+    #scroll{
+
+        margin-top:35px;
+
+        align-items:center;
+
+    }
+
+    #girl{
+
+        height:62vh;
+
+        right:-45%;
+
+        bottom:0;
+
+    }
+
+    #rabbit{
+
+        width:95px;
+
+        left:15px;
+
+        top:25px;
+
+        opacity:.08;
+
+    }
+
+    #heart{
+
+        width:65px;
+
+        right:20px;
+
+        top:35px;
+
+        opacity:.08;
+
+    }
+
+    #cross{
+
+        width:70px;
+
+        left:50%;
+
+        bottom:35px;
+
+        transform:translateX(-50%);
+
+        opacity:.08;
+
+    }
+
+}
+
+body{
+
+    opacity:0;
+
+    animation:homeFade 1.2s ease forwards;
+
+}
+
+@keyframes homeFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}

@@ -85,8 +85,13 @@ button.addEventListener("click", () => {
 
     setTimeout(() => {
 
-        // Потом здесь будет переход
-        // window.location.href = "home.html";
+        // скрываем всё интро
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity .35s ease";
+
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 350);
 
     }, 4700);
 
