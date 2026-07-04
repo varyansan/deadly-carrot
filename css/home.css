@@ -14,6 +14,11 @@
 
 }
 
+@font-face {
+    font-family: "Konstrukt";
+    src: url("../fonts/KONSTRUKT-Regular.otf") format("opentype");
+}
+
 *{
 
     margin:0;
@@ -35,7 +40,7 @@ body{
     background:#070707;
 
     overflow-x:hidden;
-    overflow-y:hidden;
+    overflow-y:auto;
 
     color:white;
 
@@ -275,16 +280,27 @@ p{
 
 }
 
-#girl{
+#girl-wrapper{
 
-    position:absolute;
+    position:fixed;
+
     right:-150px;
     bottom:0;
 
+    z-index:5;
+
+    pointer-events:none;
+
+    transition:
+            opacity .2s linear,
+            filter .2s linear;
+
+}
+
+#girl{
+
     height:95vh;
     width:auto;
-
-    z-index:5;
 
     filter:
             drop-shadow(0 0 10px rgba(255,110,20,.18))
@@ -292,6 +308,10 @@ p{
             drop-shadow(0 0 45px rgba(255,70,0,.08));
 
     animation:girlGlow 8s ease-in-out infinite;
+
+    transition:
+            opacity .15s linear,
+            filter .15s linear;
 
 }
 /* ===========================
@@ -536,8 +556,8 @@ p{
 
     #content{
 
-        left:50%;
-        top:13%;
+        left:27%;
+        top:20%;
 
         transform:translateX(-50%);
 
@@ -630,6 +650,32 @@ p{
 
     }
 
+    #about{
+
+        padding:80px 30px;
+
+    }
+
+    #about h2{
+
+        font-size:54px;
+
+    }
+
+    .about-text p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .chapter-number{
+
+        font-size:20px;
+
+    }
+
 }
 
 body{
@@ -653,5 +699,336 @@ body{
         opacity:1;
 
     }
+
+}
+
+#about-placeholder{
+    height:100vh;
+}
+
+/* ===========================
+          ABOUT
+=========================== */
+
+#about{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 10%;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.reveal{
+
+    opacity:.15;
+
+    filter:blur(12px);
+
+    transform:translateY(80px);
+
+    transition:
+            opacity .25s ease,
+            filter .25s ease,
+            transform .25s ease;
+
+}
+
+.chapter{
+
+    max-width:900px;
+
+}
+
+.chapter-number{
+
+    font-family:"Bebas";
+
+    font-size:24px;
+
+    letter-spacing:6px;
+
+    color:#ff5b00;
+
+}
+
+#about h2{
+
+    margin-top:10px;
+
+    font-family:"Another Danger";
+
+    font-size:90px;
+
+    font-weight:normal;
+
+    color:#ff5b00;
+
+    line-height:.9;
+
+    text-shadow:
+            0 0 10px rgba(255,91,0,.35);
+
+}
+
+.about-text{
+
+    margin-top:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.about-text p{
+
+    font-family:"Konstrukt";
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    letter-spacing:1.5px;
+
+    color:#dcdcdc;
+
+    max-width:900px;
+
+    text-align:justify;
+
+    text-transform:uppercase;
+
+}
+.about-end{
+
+    color:#ff7b26;
+
+}
+
+
+
+/* ===========================
+        LIVING WORDS
+=========================== */
+
+.alive-word{
+
+    transition:
+            color .35s ease,
+            text-shadow .35s ease,
+            filter .35s ease,
+            transform .35s ease;
+
+}
+
+.alive{
+
+    color:#ff5b00;
+
+    text-shadow:
+            0 0 8px rgba(255,91,0,.9),
+            0 0 18px rgba(255,91,0,.55),
+            0 0 30px rgba(255,91,0,.25);
+
+    filter:brightness(1.15);
+
+}
+
+/* ===========================
+          RULES
+=========================== */
+
+#rules h2{
+
+    margin-top:10px;
+
+    font-family:"Another Danger";
+
+    font-size:90px;
+
+    font-weight:normal;
+
+    color:#ff5b00;
+
+    line-height:.9;
+
+    text-shadow:
+            0 0 10px rgba(255,91,0,.35);
+
+}
+
+#rules{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:120px 10%;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.rules-wrapper{
+
+    width:100%;
+
+    max-width:900px;
+
+}
+
+.rules-grid{
+
+    margin-top:80px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.rule-card{
+
+    padding:30px;
+
+    border:1px solid rgba(255,120,0,.18);
+
+    background:rgba(15,10,8,.25);
+
+    backdrop-filter:blur(6px);
+
+    border-radius:10px;
+
+    transition:.35s;
+
+}
+
+.rule-card:hover{
+
+    border-color:#ff6200;
+
+    box-shadow:
+            0 0 20px rgba(255,98,0,.35);
+
+    background:rgba(35,18,10,.45);
+
+}
+
+.rule-title{
+
+    font-family:"KONSTRUKT";
+
+    font-size:34px;
+
+    color:#ff6200;
+
+    margin-bottom:15px;
+
+}
+
+.rule-card p{
+
+    font-family:"KONSTRUKT";
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#d8d8d8;
+
+}
+
+.main-rule{
+
+    margin-top:70px;
+
+    padding:45px;
+
+    border:2px solid #ff6200;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    cursor:default;
+
+    transition:
+            .35s;
+
+}
+
+.main-rule:hover{
+
+    background:#ff6200;
+
+    box-shadow:
+            0 0 20px rgba(255,98,0,.6),
+            0 0 45px rgba(255,98,0,.35);
+
+    transform:translateY(-4px);
+
+}
+
+.main-rule span{
+
+    font-family:"KONSTRUKT";
+
+    color:#ff6200;
+
+    letter-spacing:3px;
+
+    transition:.35s;
+
+}
+
+.main-rule h3{
+
+    margin-top:15px;
+
+    font-family:"KONSTRUKT";
+
+    font-size:52px;
+
+    color:#ff6200;
+
+    transition:.35s;
+
+}
+
+.main-rule p{
+
+    margin-top:10px;
+
+    font-family:"KONSTRUKT";
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.main-rule:hover span,
+.main-rule:hover h3,
+.main-rule:hover p{
+
+    color:#111;
+
+    text-shadow:none;
 
 }
