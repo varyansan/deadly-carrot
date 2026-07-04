@@ -561,10 +561,16 @@ p{
 
         transform:translateX(-50%);
 
-        width:90%;
-        max-width:340px;
+        width:calc(100% - 40px);
+        max-width:none;
 
         text-align:center;
+
+    }
+
+    #home-title{
+
+        white-space:unset;
 
     }
 
